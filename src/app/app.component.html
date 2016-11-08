@@ -1,3 +1,18 @@
-<h1>
-  {{title}}
-</h1>
+
+  <div class="root-application">
+    <app-sidebar [active]="sidebarActive"></app-sidebar>
+
+    <div class="main">
+      <div class="app-bar">
+        <div class="app-bar-wrapper">
+          <app-menu-burger-icon (onToggleStageChange)="sidebarToggleStateChange($event)"></app-menu-burger-icon>
+          <div class="logo"></div>
+        </div>
+      </div>
+      <div class="app-router-view">
+        <div class="container">
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+    </div>
+  </div>

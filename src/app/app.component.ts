@@ -3,8 +3,18 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'app works!';
+  sidebarActive: boolean = false;
+
+  constructor() { }
+
+  ngOnInit() {
+
+  }
+
+  sidebarToggleStateChange(event){
+    this.sidebarActive = event;
+  }
 }
