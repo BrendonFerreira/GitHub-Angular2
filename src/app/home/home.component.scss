@@ -1,0 +1,26 @@
+@import "../../config";
+
+.home-big-icons {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+
+.home-big-icons * {
+  max-width: 100%;
+  flex: 1 0 200px;
+  align-self: stretch;
+  text-align: center;
+}
+
+.home-big-icons > * > * {
+  padding: 20px;
+  margin: 10px;
+  background-color: $secondary_color;
+  color: white;
+}
+
+.home-big-icons > * > * > img {
+  width: 30%;
+}

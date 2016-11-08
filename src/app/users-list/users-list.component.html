@@ -1,0 +1,15 @@
+<input
+  type="search"
+  placeholder="Pesquisar..."
+  class="searchField"
+  (keyup)="onSearchFieldChange($event.target.value)"
+  (keyup.enter)="onPressEnter($event.target.value)"
+  (keyup.arrowup)="navigateListKeyBoard(-1)"
+  (keyup.arrowdown)="navigateListKeyBoard(1)"
+/>
+<div class="users-list">
+  <div class="user" *ngFor="let user of users; let i = index" (click)="goToUserPage(user.username)" [ngClass]="{'selected':selectedListItemIndex == i}">
+    <img [src]="'https://avatars.githubusercontent.com/u/' + user.id.split('-')[1]">
+    {{user.username}}
+  </div>
+</div>

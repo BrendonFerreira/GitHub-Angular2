@@ -1,0 +1,18 @@
+@import "../../config";
+
+.card-action {
+  background-color: $third_color;
+  a {
+    color: white !important;
+  }
+}
+
+.repos {
+  .card-content {
+    width: 100%;
+    display: block;
+  }
+  .collapsible {
+    box-shadow: none;
+  }
+}

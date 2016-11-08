@@ -1,0 +1,39 @@
+<div class="col s12 m7">
+  <div class="card horizontal user">
+    <div class="card-image">
+      <img [src]="user.avatar_url" />
+    </div>
+    <div class="card-stacked">
+      <div class="card-content">
+        <h2>{{user.login}}</h2>
+        <h3>{{user.name}}</h3>
+        <p>{{user.bio}}</p>
+      </div>
+      <div class="card-action">
+        <a [href]="user.html_url">Ir para o GitHub</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card horizontal repos">
+    <div class="card-content">
+      <h2>Repositórios</h2>
+      <ul class="collapsible" data-collapsible="accordion">
+        <li *ngFor="let repo of user.repos">
+          <div class="collapsible-header">
+            <svg aria-hidden="true" class="octicon octicon-repo" height="18" version="1.1" viewBox="0 0 18 18" width="18"><path fill-rule="evenodd" d="M4 9H3V8h1v1zm0-3H3v1h1V6zm0-2H3v1h1V4zm0-2H3v1h1V2zm8-1v12c0 .55-.45 1-1 1H6v2l-1.5-1.5L3 16v-2H1c-.55 0-1-.45-1-1V1c0-.55.45-1 1-1h10c.55 0 1 .45 1 1zm-1 10H1v2h2v-1h3v1h5v-2zm0-10H2v9h9V1z"></path></svg>
+            {{repo.name}}
+          </div>
+          <div class="collapsible-body">
+            <p *ngIf="repo.description != null">{{repo.description}}</p>
+            <div class="card-action">
+              <a [href]="repo.html_url">Ir para o repositório</a>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
